@@ -1,5 +1,8 @@
 package config;
 
+/**
+ * List of constants
+ */
 public class Constants
 {
     //User Configurable Constants
@@ -11,6 +14,8 @@ public class Constants
 
     //Constants (Not user configurable)
     public static final int SUDOKU_SIDE_LENGTH = 9;
+    public static final int SUDOKU_MIN_VALUE = 1;
+    public static final int SUDOKU_MAX_VALUE = 9;
     public static final String SUDOKU_PROBLEM_PATH = "resources/sudoku.txt";
     public static final String CONFIGURATION_FILE_PATH = "resources/config.properties";
 }
