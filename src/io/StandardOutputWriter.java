@@ -2,8 +2,14 @@ package io;
 
 import config.Constants;
 
+/**
+ * Class for printing information to the standard output
+ */
 public class StandardOutputWriter
 {
+    /**
+     * Prints the application title to the console
+     */
     public static void printTitle()
     {
         String title =
@@ -15,6 +21,9 @@ public class StandardOutputWriter
         System.out.println();
     }
 
+    /**
+     * Prints the user configured properties to the standard output
+     */
     public static void printAppConfiguration()
     {
         System.out.println("Application Configuration:");
