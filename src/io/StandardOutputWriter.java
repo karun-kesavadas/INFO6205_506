@@ -17,7 +17,7 @@ public class StandardOutputWriter
         "╚═╗│ │ │││ │├┴┐│ │  ╚═╗│ ││ └┐┌┘├┤ ├┬┘\n" +
         "╚═╝└─┘─┴┘└─┘┴ ┴└─┘  ╚═╝└─┘┴─┘└┘ └─┘┴└─\n";
         System.out.printf(title);
-        System.out.println("    by Karun Kesavadas, Kumari Deepshika and Bhashmi Fatnani");
+        System.out.println("    by Karun Kesavadas, Kumari Deepshikha and Bhashmi Fatnani");
         System.out.println();
     }
 
