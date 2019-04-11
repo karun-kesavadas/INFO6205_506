@@ -1,5 +1,6 @@
 package sudoku;
 
+import com.sun.xml.internal.bind.v2.runtime.reflect.opt.Const;
 import config.Constants;
 
 import java.util.Arrays;
@@ -55,12 +56,18 @@ public class SudokuElement
         return this.gridIndices;
     }
 
+    public void setGridIndex(int position, int gridIndex)
+    {
+        this.gridIndices[position] = gridIndex;
+    }
+
     /**
      * Returns the number of times a value occurs in the sudoku element.
      * @param value Sudoku Element value
      * @return Value occurrence count
      */
-    private int getValueOccurrences(int value) {
+    private int getValueOccurrences(int value)
+    {
         return this.valueOccurrences[value - 1];
     }
 
@@ -69,7 +76,8 @@ public class SudokuElement
      * @param value Sudoku Element value
      * @param newOccurrenceCount Value occurrence count
      */
-    private void setValueOccurrences(int value, int newOccurrenceCount) {
+    private void setValueOccurrences(int value, int newOccurrenceCount)
+    {
         this.valueOccurrences[value - 1] = newOccurrenceCount;
     }
 
@@ -90,6 +98,16 @@ public class SudokuElement
         {
             incrementConflictCount(newValue);
         }
+    }
+
+    /**
+     * Returns the value at the specified position
+     * @param position Position of the value to be fetched
+     * @return Value
+     */
+    public int fetch(int position)
+    {
+        return this.values[position];
     }
 
     /**
@@ -114,6 +132,35 @@ public class SudokuElement
         this.setValueOccurrences(newValue,valueOccurrence);
         if(valueOccurrence>1)
             this.conflictCount+=1;
+    }
+
+    /**
+     * Returns array of values
+     * @return Array of element values
+     */
+    public int[] toArray()
+    {
+        return this.values;
+    }
+
+    /**
+     * Returns the string representation of the sudoku element
+     * @return String representation of element
+     */
+    @Override
+    public String toString()
+    {
+        StringBuilder elementStringBuilder = new StringBuilder();
+        for (int i = 0; i < this.values.length; i++)
+        {
+            if (i % Constants.SUDOKU_BLOCK_SIZE == 0)
+            {
+                elementStringBuilder.append("| ");
+            }
+            elementStringBuilder.append(this.values[i] + " ");
+        }
+        elementStringBuilder.append("|");
+        return elementStringBuilder.toString();
     }
 }
 
