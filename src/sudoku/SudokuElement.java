@@ -9,6 +9,7 @@ import java.util.Arrays;
  * Represents a row,column or block in the Sudoku grid
  */
 public class SudokuElement
+
 {
     private int[] values;//Individual values (range 1 to 9) in the sudoku element
     private int[] valueOccurrences;//Keeps track of the number of times values 1-9 occur in the element
