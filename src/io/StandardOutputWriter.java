@@ -1,6 +1,7 @@
 package io;
 
 import config.Constants;
+import sudoku.SudokuGrid;
 
 /**
  * Class for printing information to the standard output
@@ -32,5 +33,11 @@ public class StandardOutputWriter
         System.out.println("POPULATION SIZE : "+Constants.POPULATION_SIZE);
         System.out.println("POPULATIONS BEFORE RESTART : "+Constants.POPULATIONS_BEFORE_RESTART);
         System.out.println("NUMBER OF PARENTS : "+Constants.NUMBER_OF_PARENTS);
+    }
+
+    public static void printProblemGrid(SudokuGrid sudokuGrid)
+    {
+        System.out.println("Solving the following sudoku puzzle : ");
+        System.out.println(sudokuGrid);
     }
 }
