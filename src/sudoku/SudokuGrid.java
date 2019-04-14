@@ -113,7 +113,7 @@ public class SudokuGrid
     @Override
     public String toString()
     {
-        String line = "---------";
+        String line = "-------------------------\n";
         StringBuilder gridStringBuilder = new StringBuilder();
         for(int i = 0; i < this.rows.length; i++)
         {
@@ -127,7 +127,7 @@ public class SudokuGrid
         return gridStringBuilder.toString();
     }
 
-    public Set<Integer> getVariableFields()
+    public Integer[] getVariableFields()
     {
         Set<Integer> variableFields = new HashSet<>();
         for (int rowIndex = 0; rowIndex < this.rows.length; rowIndex++)
@@ -141,6 +141,6 @@ public class SudokuGrid
                 }
             }
         }
-        return variableFields;
+        return variableFields.toArray(new Integer[variableFields.size()]);
     }
 }
