@@ -11,6 +11,7 @@ public class Constants
     public static final int POPULATION_SIZE = Integer.parseInt(Config.getInstance().getConfig(Properties.POPULATION_SIZE).toString());
     public static final int POPULATIONS_BEFORE_RESTART = Integer.parseInt(Config.getInstance().getConfig(Properties.POPULATIONS_BEFORE_RESTART).toString());
     public static final int NUMBER_OF_PARENTS = Integer.parseInt(Config.getInstance().getConfig(Properties.NUMBER_OF_PARENTS).toString());
+    public static final int NUMBER_OF_ELITES = (int)(POPULATION_SIZE * ELITISM_RATE);
 
     //Constants (Not user configurable)
     public static final int SUDOKU_SIDE_LENGTH = 9;
