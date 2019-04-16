@@ -10,6 +10,7 @@ public class SudokuGridHelper
     private Integer[] variableFields;
     private Map<Integer, Integer[]> variableFieldsPerRow;
     private Map<Integer, Integer[]> validValues;
+    private Map<Integer, Integer[]> validArrayOfNumbers;
 
     public SudokuGridHelper(SudokuGrid sudokuGrid)
     {
@@ -77,6 +78,17 @@ public class SudokuGridHelper
             }
             this.variableFieldsPerRow.put(rowIndex, variableFieldsForRow.toArray(new Integer[variableFieldsForRow.size()]));
         }
+    }
+
+
+    /**
+     *
+     * @param gridIndex the grid index of field
+     * @return the number of array of valid numbers(basically the numbers which are not present
+     * in the problem loaded to solve) which can be put to the gridindex
+     */
+    public Integer[] getValidNumbersForIndex(int gridIndex){
+       return this.validArrayOfNumbers.get(gridIndex);
     }
 
     /**
