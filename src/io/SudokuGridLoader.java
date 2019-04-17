@@ -7,10 +7,10 @@ import java.util.Scanner;
 
 public class SudokuGridLoader
 {
-    public static SudokuGrid loadGrid()
+    public static SudokuGrid loadGrid(String problemPath)
     {
         SudokuGrid grid = new SudokuGrid();
-        Scanner scanner = new Scanner(Thread.currentThread().getContextClassLoader().getResourceAsStream(Constants.SUDOKU_PROBLEM_PATH));
+        Scanner scanner = new Scanner(Thread.currentThread().getContextClassLoader().getResourceAsStream(problemPath));
         int line = 0;
         while (scanner.hasNextLine()) {
             if (line >= Constants.SUDOKU_SIDE_LENGTH) {
