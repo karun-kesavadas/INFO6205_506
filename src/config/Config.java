@@ -10,7 +10,7 @@ import java.util.Properties;
 public class Config
 {
     private static Config instance;
-    private Properties config;
+    private final Properties config;
 
     /**
      * Private Constructor. Loads the user configurable properties.

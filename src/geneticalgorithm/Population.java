@@ -8,7 +8,7 @@ public final class Population implements Iterable<Individual>
 {
     private double fitnessCount;
     private int conflictsCount;
-    private List<Individual> individuals;
+    private final List<Individual> individuals;
     private int populationSize;
 
     public Population()
@@ -60,15 +60,6 @@ public final class Population implements Iterable<Individual>
         {
             this.addIndividual(individual);
         }
-    }
-
-    /**
-     * Returns the total fitness of the population
-     * @return
-     */
-    public double getTotalFitness()
-    {
-        return this.fitnessCount;
     }
 
     /*Returns the average no of conflicts of a grid in a population*/

@@ -5,13 +5,11 @@ import geneticalgorithm.Individual;
 
 public class UniformCrossover implements Crossover
 {
-    private Individual child;
-    private Individual[] parents;
+    private final Individual[] parents;
     private int parentIndex;
 
     public UniformCrossover()
     {
-        child = new Individual();
         this.parents = new Individual[Constants.NUMBER_OF_PARENTS];
         this.parentIndex = 0;
     }
@@ -33,12 +31,13 @@ public class UniformCrossover implements Crossover
     @Override
     public Individual cross()
     {
+        Individual child = new Individual();
         if(this.needsParent())
             throw new RuntimeException("Insufficient number of parents for crossover");
-        for(int i = 0; i < this.child.getChromosome().length ; i++)
+        for(int i = 0; i < child.getChromosome().length ; i++)
         {
             int parentIndex = (int) (Math.random() * this.parents.length);
-            this.child.setChromosome(i , this.parents[parentIndex].getChromosomeFromIndex(i));
+            child.setChromosome(i , this.parents[parentIndex].getChromosomeFromIndex(i));
         }
         this.parentIndex = 0;
         return child;

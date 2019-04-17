@@ -6,7 +6,7 @@ import java.util.*;
 
 public class SudokuGridHelper
 {
-    private SudokuGrid sudokuGrid;
+    private final SudokuGrid sudokuGrid;
     private Integer[] variableFields;
     private Map<Integer, Integer[]> variableFieldsPerRow;
     private Map<Integer, Integer[]> validValues;

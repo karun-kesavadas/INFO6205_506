@@ -7,9 +7,9 @@ import java.util.Set;
 
 public class SudokuGrid
 {
-    private SudokuElement[] rows;
-    private SudokuElement[] columns;
-    private SudokuElement[] blocks;
+    private final SudokuElement[] rows;
+    private final SudokuElement[] columns;
+    private final SudokuElement[] blocks;
     private int conflictCount;
 
     /**
