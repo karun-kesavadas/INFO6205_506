@@ -4,5 +4,5 @@ import geneticalgorithm.Individual;
 
 public interface Mutation
 {
-    public Individual mutate(Individual individual);
+    Individual mutate(Individual individual);
 }

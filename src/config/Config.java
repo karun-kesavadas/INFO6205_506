@@ -18,7 +18,7 @@ public class Config
     private Config()
     {
         config = new Properties();
-        try(InputStream input= Thread.currentThread().getContextClassLoader().getResourceAsStream(Constants.CONFIGURATION_FILE_PATH);)
+        try(InputStream input= Thread.currentThread().getContextClassLoader().getResourceAsStream(Constants.CONFIGURATION_FILE_PATH))
         {
             config.load(input);
         }
@@ -26,7 +26,7 @@ public class Config
         {
             ex.printStackTrace();
         }
-    };
+    }
 
     /**
      *Returns an instance of the Singleton class Config

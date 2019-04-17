@@ -54,7 +54,7 @@ public class SudokuGridHelper
                 }
                 this.sudokuGrid.insert(gridIndex, 0);
             }
-            this.validValues.put(gridIndex, validValuesSet.toArray(new Integer[validValuesSet.size()]));
+            this.validValues.put(gridIndex, validValuesSet.toArray(new Integer[0]));
         }
     }
 
@@ -75,7 +75,7 @@ public class SudokuGridHelper
                     variableFieldsForRow.add(rowField);
                 }
             }
-            this.variableFieldsPerRow.put(rowIndex, variableFieldsForRow.toArray(new Integer[variableFieldsForRow.size()]));
+            this.variableFieldsPerRow.put(rowIndex, variableFieldsForRow.toArray(new Integer[0]));
         }
     }
 

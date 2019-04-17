@@ -13,10 +13,15 @@ public final class Population implements Iterable<Individual>
 
     public Population()
     {
+        this(Constants.POPULATION_SIZE);
+    }
+
+    public Population(int populationSize)
+    {
         this.fitnessCount = 0.0;
         this.conflictsCount = 0;
         this.individuals = new ArrayList<>();
-        this.populationSize = Constants.POPULATION_SIZE;
+        this.populationSize = populationSize;
     }
 
     public Population(Population other)
@@ -28,6 +33,7 @@ public final class Population implements Iterable<Individual>
         {
             this.individuals.add(new Individual(individual));
         }
+        this.populationSize = other.populationSize;
     }
 
     public void createRandom()

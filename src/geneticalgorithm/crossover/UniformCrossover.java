@@ -37,7 +37,7 @@ public class UniformCrossover implements Crossover
             throw new RuntimeException("Insufficient number of parents for crossover");
         for(int i = 0; i < this.child.getChromosome().length ; i++)
         {
-            int parentIndex = (int) Math.random() * this.parents.length;
+            int parentIndex = (int) (Math.random() * this.parents.length);
             this.child.setChromosome(i , this.parents[parentIndex].getChromosomeFromIndex(i));
         }
         this.parentIndex = 0;

@@ -1,6 +1,5 @@
 package sudoku;
 
-import com.sun.xml.internal.bind.v2.runtime.reflect.opt.Const;
 import config.Constants;
 
 import java.util.Arrays;
@@ -8,7 +7,7 @@ import java.util.Arrays;
 /**
  * Represents a row,column or block in the Sudoku grid
  */
-public class SudokuElement
+class SudokuElement
 
 {
     private int[] values;//Individual values (range 1 to 9) in the sudoku element
@@ -158,7 +157,7 @@ public class SudokuElement
             {
                 elementStringBuilder.append("| ");
             }
-            elementStringBuilder.append(this.values[i] + " ");
+            elementStringBuilder.append(this.values[i]).append(" ");
         }
         elementStringBuilder.append("|");
         return elementStringBuilder.toString();

@@ -33,7 +33,7 @@ public class SudokuGrid
      * Copy constructor
      * @param sudokuGrid Sudoku Grid to be copied.
      */
-    public SudokuGrid(SudokuGrid sudokuGrid)
+    protected SudokuGrid(SudokuGrid sudokuGrid)
     {
         this.conflictCount = sudokuGrid.conflictCount;
         this.rows = copyElements(sudokuGrid.rows);
@@ -97,12 +97,12 @@ public class SudokuGrid
         return rowIndex * Constants.SUDOKU_SIDE_LENGTH + columnIndex;
     }
 
-    public int getGridIndexByColumn(int columnIndex, int rowIndex)
+    private int getGridIndexByColumn(int columnIndex, int rowIndex)
     {
         return rowIndex * Constants.SUDOKU_SIDE_LENGTH + columnIndex;
     }
 
-    public int getGridIndexByBlock(int blockNum, int blockIndex)
+    private int getGridIndexByBlock(int blockNum, int blockIndex)
     {
         return ((blockNum / Constants.SUDOKU_BLOCK_SIZE) * Constants.SUDOKU_SIDE_LENGTH * Constants.SUDOKU_BLOCK_SIZE) +
                 (blockIndex / Constants.SUDOKU_BLOCK_SIZE) * Constants.SUDOKU_SIDE_LENGTH +
@@ -121,7 +121,7 @@ public class SudokuGrid
             {
                 gridStringBuilder.append(line);
             }
-            gridStringBuilder.append(this.rows[i].toString() + '\n');
+            gridStringBuilder.append(this.rows[i].toString()).append('\n');
         }
         gridStringBuilder.append(line);
         return gridStringBuilder.toString();
@@ -141,6 +141,6 @@ public class SudokuGrid
                 }
             }
         }
-        return variableFields.toArray(new Integer[variableFields.size()]);
+        return variableFields.toArray(new Integer[0]);
     }
 }
