@@ -2,21 +2,20 @@ package geneticalgorithm;
 
 import config.Constants;
 
-import java.util.Iterator;
-import java.util.TreeSet;
+import java.util.*;
 
 public final class Population implements Iterable<Individual>
 {
     private double fitnessCount;
     private int conflictsCount;
-    private TreeSet<Individual> individuals;
+    private List<Individual> individuals;
     private int populationSize;
 
     public Population()
     {
         this.fitnessCount = 0.0;
         this.conflictsCount = 0;
-        this.individuals = new TreeSet<>();
+        this.individuals = new ArrayList<>();
         this.populationSize = Constants.POPULATION_SIZE;
     }
 
@@ -39,8 +38,10 @@ public final class Population implements Iterable<Individual>
         }
     }
 
-    public void addIndividual(Individual individual) {
-        if (this.individuals.size() < this.populationSize) {
+    public void addIndividual(Individual individual)
+    {
+        if (this.individuals.size() < this.populationSize)
+        {
             this.fitnessCount += individual.getFitness();
             this.conflictsCount += individual.getConflictCount();
             this.individuals.add(individual);
@@ -85,24 +86,36 @@ public final class Population implements Iterable<Individual>
     /**
      *  @return returns the the best individuals
      */
-    public Individual[] getElites()
+    public Individual[] getElites(int count)
     {
-        Individual[] elite = new Individual[Constants.NUMBER_OF_ELITES];
-        int index = 0;
-        if (Constants.NUMBER_OF_ELITES > 0)
+        Collections.sort(this.individuals);
+        Individual[] elite = new Individual[count];
+        for(int i = 0; i < count; i++)
         {
-            for (Individual individual : this)
-            {
-                elite[index] = new Individual(individual);
-                if (++index == elite.length) break;
-            }
+            elite[i] = this.individuals.get(i);
         }
         return elite;
     }
 
+    public Individual[] getElites()
+    {
+        return getElites(Constants.NUMBER_OF_ELITES);
+    }
+
+    public Individual getIndividual(int index)
+    {
+       return this.individuals.get(index);
+    }
+
     public Individual getBestIndividual()
     {
-        return this.individuals.first();
+        Collections.sort(this.individuals);
+        return this.individuals.get(0);
+    }
+
+    public void shuffle()
+    {
+        Collections.shuffle(this.individuals);
     }
 
     @Override

@@ -1,6 +1,7 @@
 package io;
 
 import config.Constants;
+import geneticalgorithm.Individual;
 import sudoku.SudokuGrid;
 
 /**
@@ -39,5 +40,25 @@ public class StandardOutputWriter
     {
         System.out.println("Solving the following sudoku puzzle : ");
         System.out.println(sudokuGrid);
+    }
+
+    public static void printStatus(Individual elite, int epoch, int generation, double avgFitness, double avgConflicts)
+    {
+        System.out.println("EPOCH : " + epoch);
+        System.out.println("GENERATION : " + generation);
+        System.out.println("CURRENT BEST INDIVIDUAL : ");
+        System.out.println(elite);
+        System.out.println("CONFLICTS IN BEST INDIVIDUAL : " + elite.getConflictCount());
+        System.out.println("AVG CONFLICTS IN POPULATION : " + avgConflicts);
+        System.out.println("FITNESS IN BEST INDIVIDUAL : " + elite.getFitness());
+        System.out.println("AVG FITNESS IN POPULATION : " + avgFitness);
+        System.out.println();
+    }
+
+    public static void printSolution(SudokuGrid grid)
+    {
+        System.out.println("SOLUTION TO PROBLEM : ");
+        System.out.println(grid);
+        System.out.println("CONFLICTS : " + grid.getConflictCount());
     }
 }
