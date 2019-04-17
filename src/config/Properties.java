@@ -10,4 +10,5 @@ public class Properties
     public static final String POPULATION_SIZE = "population.size";
     public static final String POPULATIONS_BEFORE_RESTART = "populations.before.restart";
     public static final String NUMBER_OF_PARENTS = "parent.count";
+    public static final String TOURNAMENT_SIZE = "tournament.size";
 }

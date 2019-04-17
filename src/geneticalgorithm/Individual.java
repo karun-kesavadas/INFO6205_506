@@ -2,6 +2,7 @@ package geneticalgorithm;
 
 import config.Config;
 
+import config.Constants;
 import sudoku.SudokuGrid;
 import sudoku.SudokuGridHelper;
 
@@ -9,15 +10,14 @@ import java.util.Arrays;
 
 public final class Individual extends SudokuGrid implements Comparable<Individual>
 {
-
     private SudokuGridHelper sudokuGridHelper;
-    private int[] gene;
+    private int[] chromosome;
 
     public Individual()
     {
-        super((SudokuGrid) Config.getInstance().getConfig("grid"));
-        this.sudokuGridHelper = (SudokuGridHelper) Config.getInstance().getConfig("gridHelper");
-        this.gene = new int[this.sudokuGridHelper.getVariableFields().length];
+        super((SudokuGrid) Config.getInstance().getConfig(Constants.SUDOKU_GRID));
+        this.sudokuGridHelper = (SudokuGridHelper) Config.getInstance().getConfig(Constants.SUDOKU_GRID_HELPER);
+        this.chromosome = new int[this.sudokuGridHelper.getVariableFields().length];
         this.fillGridWithRandomNumbers();
     }
 
@@ -25,42 +25,40 @@ public final class Individual extends SudokuGrid implements Comparable<Individua
     {
         super(other);
         this.sudokuGridHelper = other.sudokuGridHelper;
-        this.gene = Arrays.copyOf(other.getGene(), other.getGene().length);
+        this.chromosome = Arrays.copyOf(other.getChromosome(), other.getChromosome().length);
     }
 
     private void fillGridWithRandomNumbers()
     {
-        for (int i = 0; i < this.gene.length; i++)
+        for (int i = 0; i < this.chromosome.length; i++)
         {
-            this.insertRandomValues(i);
+            this.insertRandomValue(i);
         }
     }
 
-        public void insertRandomValues(int geneIndex)
-        {
-            int gridIndex = this.sudokuGridHelper.getVariableFields()[geneIndex];
-            Integer[] validValues = this.sudokuGridHelper.getValidValuesForGridIndex(gridIndex);
-            int randomValueIndex = (int) (Math.random() * validValues.length);
-            this.insertValue(geneIndex, validValues[randomValueIndex]);
-        }
+    public void insertRandomValue(int geneIndex)
+    {
+        int gridIndex = this.sudokuGridHelper.getVariableFields()[geneIndex];
+        Integer[] validValues = this.sudokuGridHelper.getValidValuesForGridIndex(gridIndex);
+        int randomValueIndex = (int) (Math.random() * validValues.length);
+        this.setChromosome(geneIndex, validValues[randomValueIndex]);
+    }
 
-    public void insertValue(int geneIndex, int value)
+    public void setChromosome(int geneIndex, int value)
     {
         this.insert(this.sudokuGridHelper.getVariableFields()[geneIndex], value);
-        this.gene[geneIndex] = value;
-
+        this.chromosome[geneIndex] = value;
     }
 
-    public int readValueFromIndex(int index)
+    public int getChromosomeFromIndex(int index)
     {
-        return this.getGene()[index];
+        return this.getChromosome()[index];
     }
 
 
-    public int[] getGene()
+    public int[] getChromosome()
     {
-
-        return this.gene;
+        return this.chromosome;
     }
 
     /**
