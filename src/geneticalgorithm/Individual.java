@@ -48,6 +48,7 @@ public final class Individual extends SudokuGrid implements Comparable<Individua
     {
         this.insert(this.sudokuGridHelper.getVariableFields()[geneIndex], value);
         this.gene[geneIndex] = value;
+
     }
 
     public int readValueFromIndex(int index)

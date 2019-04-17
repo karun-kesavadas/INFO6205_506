@@ -18,6 +18,7 @@ public class Constants
     public static final int SUDOKU_MIN_VALUE = 1;
     public static final int SUDOKU_MAX_VALUE = 9;
     public static final String SUDOKU_PROBLEM_PATH = "resources/sudoku.txt";
+    public static final String TEST_SUDOKU_PROBLEM_PATH = "resources/testSudokuGrid.txt";
     public static final String CONFIGURATION_FILE_PATH = "resources/config.properties";
     public static final int SUDOKU_BLOCK_SIZE = 3;
 }
