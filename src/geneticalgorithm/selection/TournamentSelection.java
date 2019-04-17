@@ -9,7 +9,7 @@ public class TournamentSelection implements Selection
     @Override
     public Individual selectParent(Population population)
     {
-        Population tournament = new Population();
+        Population tournament = new Population(Constants.TOURNAMENT_SIZE);
         population.shuffle();
         for(int i=0; i < Constants.TOURNAMENT_SIZE; i++)
         {

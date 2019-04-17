@@ -16,9 +16,9 @@ public class GeneticAlgorithm
 {
     private Population population;
     private Population restartPopulation;
-    private Mutation mutation;
-    private Crossover crossover;
-    private Selection selection;
+    private final Mutation mutation;
+    private final Crossover crossover;
+    private final Selection selection;
     private Population generationElites;
     private List<Double> bestFitnessOfGeneration;
     private int generation;

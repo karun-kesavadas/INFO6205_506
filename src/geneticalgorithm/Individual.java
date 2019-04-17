@@ -7,11 +7,12 @@ import sudoku.SudokuGrid;
 import sudoku.SudokuGridHelper;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public final class Individual extends SudokuGrid implements Comparable<Individual>
 {
-    private SudokuGridHelper sudokuGridHelper;
-    private int[] chromosome;
+    private final SudokuGridHelper sudokuGridHelper;
+    private final int[] chromosome;
 
     public Individual()
     {
@@ -36,7 +37,7 @@ public final class Individual extends SudokuGrid implements Comparable<Individua
         }
     }
 
-    public void insertRandomValue(int geneIndex)
+    private void insertRandomValue(int geneIndex)
     {
         int gridIndex = this.sudokuGridHelper.getVariableFields()[geneIndex];
         Integer[] validValues = this.sudokuGridHelper.getValidValuesForGridIndex(gridIndex);
@@ -47,6 +48,17 @@ public final class Individual extends SudokuGrid implements Comparable<Individua
     public void setChromosome(int geneIndex, int value)
     {
         this.insert(this.sudokuGridHelper.getVariableFields()[geneIndex], value);
+        this.chromosome[geneIndex] = value;
+    }
+
+    public void setChromosomeByGridIndex(int gridIndex, int value)
+    {
+        Integer[] variableFields = this.sudokuGridHelper.getVariableFields();
+        int geneIndex = IntStream.range(0,variableFields.length)
+                .filter(i -> gridIndex == variableFields[i])
+                .findFirst()
+                .orElse(-1);
+        this.insert(gridIndex,value);
         this.chromosome[geneIndex] = value;
     }
 

@@ -1,6 +1,5 @@
 package sudoku;
 
-import com.sun.xml.internal.bind.v2.runtime.reflect.opt.Const;
 import config.Constants;
 
 import java.util.Arrays;
@@ -8,12 +7,12 @@ import java.util.Arrays;
 /**
  * Represents a row,column or block in the Sudoku grid
  */
-public class SudokuElement
+class SudokuElement
 
 {
-    private int[] values;//Individual values (range 1 to 9) in the sudoku element
-    private int[] valueOccurrences;//Keeps track of the number of times values 1-9 occur in the element
-    private int[] gridIndices;//Tracks the grid index of the values
+    private final int[] values;//Individual values (range 1 to 9) in the sudoku element
+    private final int[] valueOccurrences;//Keeps track of the number of times values 1-9 occur in the element
+    private final int[] gridIndices;//Tracks the grid index of the values
     private int conflictCount;
 
     /**
@@ -48,15 +47,6 @@ public class SudokuElement
         return this.conflictCount;
     }
 
-    /**
-     * Returns an array containing the sudoku grid indices of the values stored in the element
-     * @return Sudoku grid indices of the values in the element
-     */
-    public int[] getGridIndices()
-    {
-        return this.gridIndices;
-    }
-
     public void setGridIndex(int position, int gridIndex)
     {
         this.gridIndices[position] = gridIndex;
@@ -83,7 +73,7 @@ public class SudokuElement
     }
 
     /**
-     * Updates the value at the specified postion
+     * Updates the value at the specified position
      * @param position Position in the element which needs to be updated
      * @param newValue New value to be inserted at the given position
      */
@@ -158,7 +148,7 @@ public class SudokuElement
             {
                 elementStringBuilder.append("| ");
             }
-            elementStringBuilder.append(this.values[i] + " ");
+            elementStringBuilder.append(this.values[i]).append(" ");
         }
         elementStringBuilder.append("|");
         return elementStringBuilder.toString();

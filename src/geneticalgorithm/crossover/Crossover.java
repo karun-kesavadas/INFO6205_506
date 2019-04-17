@@ -4,9 +4,9 @@ import geneticalgorithm.Individual;
 
 public interface Crossover
 {
-    public void addParent(Individual individual);
+    void addParent(Individual individual);
 
-    public boolean needsParent();
+    boolean needsParent();
 
-    public Individual cross();
+    Individual cross();
 }

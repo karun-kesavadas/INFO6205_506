@@ -3,7 +3,7 @@ package config;
 /**
  * List of user configurable property names.
  */
-public class Properties
+class Properties
 {
     public static final String ELITISM_RATE = "elitism.rate";
     public static final String MUTATION_RATE = "mutation.rate";

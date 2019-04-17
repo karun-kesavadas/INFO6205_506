@@ -26,18 +26,6 @@ class SudokuElementTest {
     }
 
     @Test
-    @DisplayName("Test getGridIndices")
-    void getGridIndices() {
-
-        for(int i=0;i<9;i++) {
-            se.insert(i, i + 1);
-            se.setGridIndex(i, i);
-        }
-        int[] expected=new int[] {0,1,2,3,4,5,6,7,8};
-        assertArrayEquals(expected,se.getGridIndices());
-    }
-
-    @Test
     @DisplayName("Test setGridIndex")
     void setGridIndex() {
         for(int i=0;i<9;i++) {

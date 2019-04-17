@@ -10,7 +10,7 @@ import java.util.Properties;
 public class Config
 {
     private static Config instance;
-    private Properties config;
+    private final Properties config;
 
     /**
      * Private Constructor. Loads the user configurable properties.
@@ -18,7 +18,7 @@ public class Config
     private Config()
     {
         config = new Properties();
-        try(InputStream input= Thread.currentThread().getContextClassLoader().getResourceAsStream(Constants.CONFIGURATION_FILE_PATH);)
+        try(InputStream input= Thread.currentThread().getContextClassLoader().getResourceAsStream(Constants.CONFIGURATION_FILE_PATH))
         {
             config.load(input);
         }
@@ -26,7 +26,7 @@ public class Config
         {
             ex.printStackTrace();
         }
-    };
+    }
 
     /**
      *Returns an instance of the Singleton class Config
