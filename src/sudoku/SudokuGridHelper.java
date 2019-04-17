@@ -82,7 +82,7 @@ public class SudokuGridHelper
     /**
      * @param gridIndex the grid index of the field
      * @param value the value which gets tested for validity
-     * @return true iff a given value is valid for a field with at given grid index
+     * @return true if a given value is valid for a field with at given grid index
      */
     public boolean valueIsValidForGridIndex(int gridIndex, int value)
     {
@@ -95,6 +95,7 @@ public class SudokuGridHelper
      * @return array of valid values for a given index
      */
     public Integer[] getValidValuesForGridIndex(int gridIndex)
+
     {
         return this.validValues.get(gridIndex);
     }
@@ -103,7 +104,8 @@ public class SudokuGridHelper
      * @param rowIndex the index of the row to get the variable fields for
      * @return Array of variable fields in a given row
      */
-    public Integer[] getVariableFieldsForRow(int rowIndex) {
+    public Integer[] getVariableFieldsForRow(int rowIndex)
+    {
         return this.variableFieldsPerRow.get(rowIndex);
     }
 }
