@@ -2,7 +2,6 @@ package sudoku;
 
 import config.Constants;
 import io.SudokuGridLoader;
-import jdk.internal.cmm.SystemResourcePressureImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,21 +9,21 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SudokuGridHelperTest {
 
-    SudokuGridHelper sgh;
-    SudokuGrid sg;
+    SudokuGridHelper sudokuGridHelper;
+    SudokuGrid sudokuGrid;
 
     @BeforeEach
     public void init() {
 
-        sg = new SudokuGrid();
-        sgh = new SudokuGridHelper(sg);
+        sudokuGrid = new SudokuGrid();
+        sudokuGridHelper = new SudokuGridHelper(sudokuGrid);
     }
 
 
     @Test
     void getVariableFields() {
-        sg=SudokuGridLoader.loadGrid(Constants.TEST_SUDOKU_PROBLEM_PATH);
-        Integer[] actual=sgh.getVariableFields();
+        sudokuGrid =SudokuGridLoader.loadGrid(Constants.TEST_SUDOKU_PROBLEM_PATH);
+        Integer[] actual= sudokuGridHelper.getVariableFields();
         Integer[] expected=new Integer[actual.length];
         for(int i=0; i<81; i++)
             expected[i]=i;
@@ -34,8 +33,8 @@ class SudokuGridHelperTest {
 
     @Test
     void valueIsValidForGridIndex() {
-                assertEquals(true,sgh.valueIsValidForGridIndex(12,3));
-                assertEquals(true,sgh.valueIsValidForGridIndex(21,5));
+                assertEquals(true, sudokuGridHelper.valueIsValidForGridIndex(12,3));
+                assertEquals(true, sudokuGridHelper.valueIsValidForGridIndex(21,5));
     }
 
     @Test
@@ -44,7 +43,7 @@ class SudokuGridHelperTest {
        for(int i=0;i<9;i++) {
            expected[i] = i+1;
        }
-       assertArrayEquals(expected, sgh.getValidValuesForGridIndex(5));
+       assertArrayEquals(expected, sudokuGridHelper.getValidValuesForGridIndex(5));
     }
 
     @Test
@@ -53,6 +52,6 @@ class SudokuGridHelperTest {
         for(int i=18;i<27;i++) {
             expected[i-18] = i;
         }
-        assertArrayEquals(expected, sgh.getVariableFieldsForRow(2));
+        assertArrayEquals(expected, sudokuGridHelper.getVariableFieldsForRow(2));
     }
 }

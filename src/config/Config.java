@@ -57,7 +57,7 @@ public class Config
     public Object getConfig(String property)
     {
         if(!this.config.containsKey(property))
-            throw new IllegalArgumentException("Property does not exist");
+            throw new IllegalArgumentException("Property does not exist : "+property);
         return this.config.get(property);
     }
 }
