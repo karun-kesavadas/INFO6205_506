@@ -5,7 +5,6 @@ import config.Constants;
 import io.SudokuGridLoader;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import sudoku.SudokuElement;
 import sudoku.SudokuGrid;
 import sudoku.SudokuGridHelper;
 
@@ -13,31 +12,31 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class IndividualTest {
 
-    Individual indi;
-    SudokuGrid sg;
-    SudokuGridHelper sgh;
+    Individual individual;
+    SudokuGrid sudokuGrid;
+    SudokuGridHelper sudokuGridHelper;
 
     @BeforeEach
     public void init()
     {
-        sg= SudokuGridLoader.loadGrid(Constants.TEST_SUDOKU_PROBLEM_PATH);
-        sgh=new SudokuGridHelper(sg);
-        Config.getInstance().setConfig("grid",sg);
-        Config.getInstance().setConfig("gridHelper",sgh);
-        indi=new Individual ();
+        sudokuGrid = SudokuGridLoader.loadGrid(Constants.TEST_SUDOKU_PROBLEM_PATH);
+        sudokuGridHelper =new SudokuGridHelper(sudokuGrid);
+        Config.getInstance().setConfig(Constants.SUDOKU_GRID, sudokuGrid);
+        Config.getInstance().setConfig(Constants.SUDOKU_GRID_HELPER, sudokuGridHelper);
+        individual =new Individual ();
     }
 
     @Test
     void insertValue() {
 
-        indi.insertValue(6,5);
-        assertEquals(5,indi.getGene()[6]);
+        individual.setChromosome(6,5);
+        assertEquals(5, individual.getChromosome()[6]);
     }
 
     @Test
     void readValueFromIndex() {
-        indi.insertValue(6,5);
-       assertEquals(5,indi.readValueFromIndex(6));
+        individual.setChromosome(6,5);
+       assertEquals(5, individual.getChromosomeFromIndex(6));
     }
 
 }
