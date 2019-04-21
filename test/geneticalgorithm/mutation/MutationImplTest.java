@@ -1,4 +1,4 @@
-package geneticalgorithm.crossover;
+package geneticalgorithm.mutation;
 
 import config.Config;
 import config.Constants;
@@ -9,10 +9,10 @@ import org.junit.jupiter.api.Test;
 import sudoku.SudokuGrid;
 import sudoku.SudokuGridHelper;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-class UniformCrossoverTest {
-    private UniformCrossover crossover;
+class MutationImplTest {
+    private MutationImpl mutation;
     private SudokuGrid sudokuGrid;
     private SudokuGridHelper sudokuGridHelper;
 
@@ -23,30 +23,13 @@ class UniformCrossoverTest {
         sudokuGridHelper =new SudokuGridHelper(sudokuGrid);
         Config.getInstance().setConfig(Constants.SUDOKU_GRID, sudokuGrid);
         Config.getInstance().setConfig(Constants.SUDOKU_GRID_HELPER, sudokuGridHelper);
-        crossover = new UniformCrossover();
+        mutation = new MutationImpl();
     }
 
     @Test
-    void addParent()
+    void mutate()
     {
-        for(int i=0;i<Constants.NUMBER_OF_PARENTS;i++)
-        {
-            crossover.addParent(new Individual());
-        }
-        assertEquals(crossover.needsParent(),false);
-    }
-
-    @Test
-    void needsParent()
-    {
-        assertEquals(true,true);
-        addParent();
-    }
-
-    @Test
-    void cross()
-    {
-        addParent();
-        assertNotNull(crossover.cross());
+        Individual individual = new Individual();
+        assertNotNull(mutation.mutate(individual));
     }
 }

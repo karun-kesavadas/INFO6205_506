@@ -1,18 +1,18 @@
-package geneticalgorithm.crossover;
+package geneticalgorithm.selection;
 
 import config.Config;
 import config.Constants;
-import geneticalgorithm.Individual;
+import geneticalgorithm.Population;
 import io.SudokuGridLoader;
+import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import sudoku.SudokuGrid;
 import sudoku.SudokuGridHelper;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class UniformCrossoverTest {
-    private UniformCrossover crossover;
+class TournamentSelectionTest
+{
+    private Selection selection;
     private SudokuGrid sudokuGrid;
     private SudokuGridHelper sudokuGridHelper;
 
@@ -23,30 +23,14 @@ class UniformCrossoverTest {
         sudokuGridHelper =new SudokuGridHelper(sudokuGrid);
         Config.getInstance().setConfig(Constants.SUDOKU_GRID, sudokuGrid);
         Config.getInstance().setConfig(Constants.SUDOKU_GRID_HELPER, sudokuGridHelper);
-        crossover = new UniformCrossover();
+        selection = new TournamentSelection();
     }
 
     @Test
-    void addParent()
+    void selectParent()
     {
-        for(int i=0;i<Constants.NUMBER_OF_PARENTS;i++)
-        {
-            crossover.addParent(new Individual());
-        }
-        assertEquals(crossover.needsParent(),false);
-    }
-
-    @Test
-    void needsParent()
-    {
-        assertEquals(true,true);
-        addParent();
-    }
-
-    @Test
-    void cross()
-    {
-        addParent();
-        assertNotNull(crossover.cross());
+        Population population = new Population(100);
+        population.createRandom();
+        Assert.assertNotNull(selection.selectParent(population));
     }
 }
