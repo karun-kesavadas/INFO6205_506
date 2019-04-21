@@ -1,0 +1,749 @@
+"C:\Program Files\Java\jdk1.8.0_191\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2018.3.2\lib\idea_rt.jar=49364:C:\Program Files\JetBrains\IntelliJ IDEA 2018.3.2\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files\Java\jdk1.8.0_191\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_191\jre\lib\rt.jar;C:\Users\kesavadas.k\Projects\INFO6205_506\out\production\INFO6205_506" App
+╔═╗┬ ┬┌┬┐┌─┐┬┌─┬ ┬  ╔═╗┌─┐┬ ┬  ┬┌─┐┬─┐
+╚═╗│ │ │││ │├┴┐│ │  ╚═╗│ ││ └┐┌┘├┤ ├┬┘
+╚═╝└─┘─┴┘└─┘┴ ┴└─┘  ╚═╝└─┘┴─┘└┘ └─┘┴└─
+    by Karun Kesavadas, Kumari Deepshikha and Bhashmi Fatnani
+
+Solving the following sudoku puzzle : 
+-------------------------
+| 0 0 0 | 0 0 0 | 3 8 0 |
+| 0 0 0 | 3 4 6 | 0 0 0 |
+| 0 5 1 | 0 0 0 | 0 0 0 |
+-------------------------
+| 2 0 0 | 8 0 3 | 0 0 6 |
+| 0 6 0 | 0 0 0 | 5 0 9 |
+| 0 1 5 | 2 0 0 | 0 0 0 |
+-------------------------
+| 0 0 0 | 0 3 0 | 6 7 0 |
+| 0 0 2 | 0 0 0 | 0 5 0 |
+| 6 0 4 | 0 7 2 | 0 0 0 |
+-------------------------
+
+Application Configuration:
+ELITISM RATE : 0.02
+MUTATION RATE : 0.5
+POPULATION SIZE : 1000
+POPULATIONS BEFORE RESTART : 30
+NUMBER OF PARENTS : 4
+EPOCH : 1
+GENERATION : 50
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 7 4 6 | 1 2 5 | 3 8 7 |
+| 9 2 8 | 3 4 6 | 9 1 5 |
+| 3 5 1 | 9 8 7 | 2 6 4 |
+-------------------------
+| 2 9 7 | 8 5 3 | 1 4 6 |
+| 8 6 3 | 7 1 4 | 5 2 9 |
+| 4 1 5 | 2 6 9 | 7 3 8 |
+-------------------------
+| 5 8 9 | 4 3 1 | 6 7 2 |
+| 1 7 2 | 6 9 8 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 8 9 1 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 2
+AVG CONFLICTS IN POPULATION : 5.262
+FITNESS IN BEST INDIVIDUAL : 0.9753086419753086
+AVG FITNESS IN POPULATION : 0.9350370370370279
+
+EPOCH : 2
+GENERATION : 51
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 4 2 6 | 1 2 5 | 3 8 7 |
+| 9 8 7 | 3 4 6 | 2 1 5 |
+| 3 5 1 | 9 8 7 | 9 6 4 |
+-------------------------
+| 2 4 9 | 8 5 3 | 7 1 6 |
+| 8 6 3 | 7 1 4 | 5 2 9 |
+| 7 1 5 | 2 6 9 | 4 3 8 |
+-------------------------
+| 5 9 8 | 4 3 1 | 6 7 2 |
+| 1 7 2 | 6 9 8 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 8 9 1 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 4
+AVG CONFLICTS IN POPULATION : 7.011
+FITNESS IN BEST INDIVIDUAL : 0.9506172839506173
+AVG FITNESS IN POPULATION : 0.9134444444444397
+
+EPOCH : 3
+GENERATION : 50
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 4 2 6 | 7 9 5 | 3 8 1 |
+| 7 9 8 | 3 4 6 | 2 9 5 |
+| 3 5 1 | 9 2 8 | 7 6 4 |
+-------------------------
+| 2 4 7 | 8 5 3 | 1 4 6 |
+| 8 6 3 | 4 1 7 | 5 2 9 |
+| 9 1 5 | 2 6 4 | 8 3 7 |
+-------------------------
+| 5 8 9 | 4 3 1 | 6 7 2 |
+| 1 7 2 | 6 8 9 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 9 1 8 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 5
+AVG CONFLICTS IN POPULATION : 7.636
+FITNESS IN BEST INDIVIDUAL : 0.9382716049382716
+AVG FITNESS IN POPULATION : 0.905728395061723
+
+EPOCH : 4
+GENERATION : 55
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 9 4 6 | 1 2 5 | 3 8 7 |
+| 7 2 8 | 3 4 6 | 9 1 5 |
+| 3 5 1 | 7 9 8 | 2 6 4 |
+-------------------------
+| 2 9 7 | 8 5 3 | 1 4 6 |
+| 8 6 3 | 4 1 7 | 5 2 9 |
+| 4 1 5 | 2 6 9 | 7 3 8 |
+-------------------------
+| 5 8 9 | 1 3 4 | 6 7 2 |
+| 1 7 2 | 6 8 9 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 8 9 1 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 2
+AVG CONFLICTS IN POPULATION : 5.166
+FITNESS IN BEST INDIVIDUAL : 0.9753086419753086
+AVG FITNESS IN POPULATION : 0.936222222222213
+
+EPOCH : 5
+GENERATION : 53
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 4 2 6 | 7 9 5 | 3 8 1 |
+| 9 8 7 | 3 4 6 | 2 9 5 |
+| 3 5 1 | 9 2 8 | 4 6 7 |
+-------------------------
+| 2 4 9 | 8 5 3 | 7 1 6 |
+| 8 6 3 | 4 1 7 | 5 2 9 |
+| 7 1 5 | 2 6 9 | 8 3 4 |
+-------------------------
+| 5 9 8 | 1 3 4 | 6 7 2 |
+| 1 7 2 | 6 8 9 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 1 9 8 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 5
+AVG CONFLICTS IN POPULATION : 7.568
+FITNESS IN BEST INDIVIDUAL : 0.9382716049382716
+AVG FITNESS IN POPULATION : 0.9065679012345617
+
+EPOCH : 6
+GENERATION : 52
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 4 9 6 | 9 5 1 | 3 8 7 |
+| 7 2 8 | 3 4 6 | 1 9 5 |
+| 3 5 1 | 7 2 8 | 2 6 4 |
+-------------------------
+| 2 4 7 | 8 5 3 | 7 1 6 |
+| 8 6 3 | 4 1 7 | 5 2 9 |
+| 9 1 5 | 2 6 9 | 8 3 4 |
+-------------------------
+| 5 8 9 | 1 3 4 | 6 7 2 |
+| 1 7 2 | 6 9 8 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 9 1 8 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 8
+AVG CONFLICTS IN POPULATION : 10.841
+FITNESS IN BEST INDIVIDUAL : 0.9012345679012346
+AVG FITNESS IN POPULATION : 0.8661604938271629
+
+EPOCH : 7
+GENERATION : 54
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 9 4 6 | 1 2 5 | 3 8 7 |
+| 8 2 7 | 3 4 6 | 1 9 5 |
+| 3 5 1 | 9 8 7 | 2 6 4 |
+-------------------------
+| 2 4 9 | 8 5 3 | 7 1 6 |
+| 8 6 3 | 7 1 4 | 5 2 9 |
+| 7 1 5 | 2 6 9 | 4 3 8 |
+-------------------------
+| 5 9 8 | 4 3 1 | 6 7 2 |
+| 1 7 2 | 6 9 8 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 8 9 1 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 4
+AVG CONFLICTS IN POPULATION : 6.939
+FITNESS IN BEST INDIVIDUAL : 0.9506172839506173
+AVG FITNESS IN POPULATION : 0.914333333333332
+
+EPOCH : 8
+GENERATION : 51
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 9 4 6 | 1 2 5 | 3 8 7 |
+| 7 2 8 | 3 4 6 | 9 1 5 |
+| 3 5 1 | 9 8 7 | 2 6 4 |
+-------------------------
+| 2 9 7 | 8 5 3 | 1 4 6 |
+| 8 6 3 | 7 1 4 | 5 2 9 |
+| 4 1 5 | 2 6 9 | 8 3 7 |
+-------------------------
+| 5 8 9 | 4 3 1 | 6 7 2 |
+| 1 7 2 | 6 9 8 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 1 9 8 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 2
+AVG CONFLICTS IN POPULATION : 5.03
+FITNESS IN BEST INDIVIDUAL : 0.9753086419753086
+AVG FITNESS IN POPULATION : 0.9379012345678931
+
+EPOCH : 9
+GENERATION : 51
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 4 2 6 | 1 9 5 | 3 8 7 |
+| 8 9 7 | 3 4 6 | 1 9 5 |
+| 3 5 1 | 7 2 8 | 2 6 4 |
+-------------------------
+| 2 4 9 | 8 5 3 | 7 1 6 |
+| 8 6 3 | 4 1 7 | 5 2 9 |
+| 7 1 5 | 2 6 9 | 4 3 8 |
+-------------------------
+| 5 8 8 | 9 3 1 | 6 7 2 |
+| 1 7 2 | 6 8 4 | 9 5 3 |
+| 6 3 4 | 5 7 2 | 8 9 1 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 7
+AVG CONFLICTS IN POPULATION : 9.697
+FITNESS IN BEST INDIVIDUAL : 0.9135802469135802
+AVG FITNESS IN POPULATION : 0.880283950617291
+
+EPOCH : 10
+GENERATION : 56
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 4 9 6 | 1 2 5 | 3 8 7 |
+| 7 2 8 | 3 4 6 | 1 9 5 |
+| 3 5 1 | 9 8 7 | 2 6 4 |
+-------------------------
+| 2 4 9 | 8 5 3 | 7 1 6 |
+| 8 6 3 | 7 1 4 | 5 2 9 |
+| 7 1 5 | 2 6 9 | 8 3 4 |
+-------------------------
+| 5 8 9 | 4 3 1 | 6 7 2 |
+| 1 7 2 | 6 9 8 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 9 1 8 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 4
+AVG CONFLICTS IN POPULATION : 7.051
+FITNESS IN BEST INDIVIDUAL : 0.9506172839506173
+AVG FITNESS IN POPULATION : 0.9129506172839508
+
+EPOCH : 11
+GENERATION : 53
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 4 9 6 | 1 2 5 | 3 8 7 |
+| 8 2 7 | 3 4 6 | 1 9 5 |
+| 3 5 1 | 9 8 7 | 2 6 4 |
+-------------------------
+| 2 4 9 | 8 5 3 | 7 1 6 |
+| 8 6 3 | 4 1 7 | 5 2 9 |
+| 7 1 5 | 2 6 9 | 8 3 4 |
+-------------------------
+| 5 9 8 | 4 3 1 | 6 7 2 |
+| 1 7 2 | 6 9 8 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 9 1 8 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 6
+AVG CONFLICTS IN POPULATION : 8.85
+FITNESS IN BEST INDIVIDUAL : 0.9259259259259259
+AVG FITNESS IN POPULATION : 0.8907407407407517
+
+EPOCH : 12
+GENERATION : 51
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 7 4 6 | 1 9 5 | 3 8 2 |
+| 9 2 8 | 3 4 6 | 7 1 5 |
+| 3 5 1 | 7 2 8 | 9 6 4 |
+-------------------------
+| 2 9 7 | 8 5 3 | 1 4 6 |
+| 8 6 3 | 4 1 7 | 5 2 9 |
+| 4 1 5 | 2 6 9 | 8 3 7 |
+-------------------------
+| 5 8 9 | 4 3 1 | 6 7 2 |
+| 1 7 2 | 6 8 9 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 8 9 1 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 4
+AVG CONFLICTS IN POPULATION : 6.975
+FITNESS IN BEST INDIVIDUAL : 0.9506172839506173
+AVG FITNESS IN POPULATION : 0.9138888888888858
+
+EPOCH : 13
+GENERATION : 61
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 7 4 6 | 1 9 5 | 3 8 2 |
+| 9 2 8 | 3 4 6 | 7 1 5 |
+| 3 5 1 | 7 2 8 | 9 6 4 |
+-------------------------
+| 2 9 7 | 8 5 3 | 1 4 6 |
+| 8 6 3 | 4 1 7 | 5 2 9 |
+| 4 1 5 | 2 6 9 | 8 3 7 |
+-------------------------
+| 5 8 9 | 4 3 1 | 6 7 2 |
+| 1 7 2 | 6 8 9 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 1 9 8 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 4
+AVG CONFLICTS IN POPULATION : 7.061
+FITNESS IN BEST INDIVIDUAL : 0.9506172839506173
+AVG FITNESS IN POPULATION : 0.9128271604938264
+
+EPOCH : 14
+GENERATION : 50
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 9 4 6 | 1 2 5 | 3 8 7 |
+| 7 2 8 | 3 4 6 | 9 1 5 |
+| 3 5 1 | 9 8 7 | 2 6 4 |
+-------------------------
+| 2 9 7 | 8 5 3 | 1 4 6 |
+| 8 6 3 | 7 1 4 | 5 2 9 |
+| 4 1 5 | 2 6 9 | 8 3 7 |
+-------------------------
+| 5 8 9 | 4 3 1 | 6 7 2 |
+| 1 7 2 | 6 9 8 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 1 9 8 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 2
+AVG CONFLICTS IN POPULATION : 5.225
+FITNESS IN BEST INDIVIDUAL : 0.9753086419753086
+AVG FITNESS IN POPULATION : 0.9354938271604851
+
+EPOCH : 15
+GENERATION : 51
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 4 9 6 | 1 2 5 | 3 8 1 |
+| 7 2 8 | 3 4 6 | 2 9 5 |
+| 3 5 1 | 9 8 7 | 4 6 7 |
+-------------------------
+| 2 4 7 | 8 5 3 | 7 1 6 |
+| 8 6 3 | 7 1 4 | 5 2 9 |
+| 9 1 5 | 2 6 9 | 8 3 4 |
+-------------------------
+| 5 8 9 | 4 3 1 | 6 7 2 |
+| 1 7 2 | 6 9 8 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 9 1 8 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 7
+AVG CONFLICTS IN POPULATION : 9.755
+FITNESS IN BEST INDIVIDUAL : 0.9135802469135802
+AVG FITNESS IN POPULATION : 0.8795679012345743
+
+EPOCH : 16
+GENERATION : 53
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 4 2 6 | 1 9 5 | 3 8 7 |
+| 7 9 8 | 3 4 6 | 2 1 5 |
+| 3 5 1 | 7 2 8 | 9 6 4 |
+-------------------------
+| 2 4 7 | 8 5 3 | 4 1 6 |
+| 8 6 3 | 4 1 7 | 5 2 9 |
+| 9 1 5 | 2 6 4 | 7 3 8 |
+-------------------------
+| 5 8 9 | 4 3 1 | 6 7 2 |
+| 1 7 2 | 6 8 9 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 1 9 8 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 6
+AVG CONFLICTS IN POPULATION : 8.921
+FITNESS IN BEST INDIVIDUAL : 0.9259259259259259
+AVG FITNESS IN POPULATION : 0.8898641975308759
+
+EPOCH : 17
+GENERATION : 49
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 4 9 6 | 1 2 5 | 3 8 7 |
+| 7 2 8 | 3 4 6 | 9 1 5 |
+| 3 5 1 | 9 8 7 | 2 6 4 |
+-------------------------
+| 2 4 9 | 8 5 3 | 7 1 6 |
+| 8 6 3 | 7 1 4 | 5 2 9 |
+| 7 1 5 | 2 6 9 | 8 3 4 |
+-------------------------
+| 5 8 9 | 4 3 1 | 6 7 2 |
+| 1 7 2 | 6 9 8 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 1 9 8 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 4
+AVG CONFLICTS IN POPULATION : 7.051
+FITNESS IN BEST INDIVIDUAL : 0.9506172839506173
+AVG FITNESS IN POPULATION : 0.9129506172839486
+
+EPOCH : 18
+GENERATION : 51
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 9 4 6 | 1 2 5 | 3 8 7 |
+| 7 2 8 | 3 4 6 | 1 9 5 |
+| 3 5 1 | 9 8 7 | 2 6 4 |
+-------------------------
+| 2 9 7 | 8 5 3 | 1 4 6 |
+| 8 6 3 | 7 1 4 | 5 2 9 |
+| 4 1 5 | 2 6 9 | 8 3 7 |
+-------------------------
+| 5 8 9 | 4 3 1 | 6 7 2 |
+| 1 7 2 | 6 9 8 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 9 1 8 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 2
+AVG CONFLICTS IN POPULATION : 5.301
+FITNESS IN BEST INDIVIDUAL : 0.9753086419753086
+AVG FITNESS IN POPULATION : 0.934555555555547
+
+EPOCH : 19
+GENERATION : 54
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 4 9 6 | 7 2 5 | 3 8 1 |
+| 7 2 8 | 3 4 6 | 2 9 5 |
+| 3 5 1 | 9 2 8 | 7 6 4 |
+-------------------------
+| 2 9 7 | 8 5 3 | 1 4 6 |
+| 8 6 3 | 4 1 7 | 5 2 9 |
+| 4 1 5 | 2 6 9 | 8 3 7 |
+-------------------------
+| 5 8 9 | 1 3 4 | 6 7 2 |
+| 1 7 2 | 6 9 8 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 9 1 8 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 6
+AVG CONFLICTS IN POPULATION : 8.765
+FITNESS IN BEST INDIVIDUAL : 0.9259259259259259
+AVG FITNESS IN POPULATION : 0.8917901234568036
+
+EPOCH : 20
+GENERATION : 52
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 4 9 6 | 1 2 5 | 3 8 7 |
+| 7 2 8 | 3 4 6 | 1 9 5 |
+| 3 5 1 | 9 8 7 | 2 6 4 |
+-------------------------
+| 2 4 9 | 8 5 3 | 7 1 6 |
+| 8 6 3 | 7 1 4 | 5 2 9 |
+| 7 1 5 | 2 6 9 | 8 3 4 |
+-------------------------
+| 5 8 9 | 4 3 1 | 6 7 2 |
+| 1 7 2 | 6 9 8 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 9 1 8 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 4
+AVG CONFLICTS IN POPULATION : 7.06
+FITNESS IN BEST INDIVIDUAL : 0.9506172839506173
+AVG FITNESS IN POPULATION : 0.9128395061728375
+
+EPOCH : 21
+GENERATION : 51
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 9 4 6 | 1 2 5 | 3 8 7 |
+| 7 2 8 | 3 4 6 | 1 9 5 |
+| 3 5 1 | 7 9 8 | 2 6 4 |
+-------------------------
+| 2 9 7 | 8 5 3 | 1 4 6 |
+| 8 6 3 | 4 1 7 | 5 2 9 |
+| 4 1 5 | 2 6 9 | 8 3 7 |
+-------------------------
+| 5 8 9 | 4 3 1 | 6 7 2 |
+| 1 7 2 | 6 8 9 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 9 1 8 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 4
+AVG CONFLICTS IN POPULATION : 6.945
+FITNESS IN BEST INDIVIDUAL : 0.9506172839506173
+AVG FITNESS IN POPULATION : 0.9142592592592583
+
+EPOCH : 22
+GENERATION : 50
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 4 2 6 | 1 9 5 | 3 8 7 |
+| 9 8 7 | 3 4 6 | 2 1 5 |
+| 3 5 1 | 7 2 8 | 9 6 4 |
+-------------------------
+| 2 7 9 | 8 5 3 | 1 4 6 |
+| 8 6 3 | 4 1 7 | 5 2 9 |
+| 4 1 5 | 2 6 9 | 7 3 8 |
+-------------------------
+| 5 9 8 | 4 3 1 | 6 7 2 |
+| 1 7 2 | 6 8 9 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 8 9 1 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 4
+AVG CONFLICTS IN POPULATION : 6.897
+FITNESS IN BEST INDIVIDUAL : 0.9506172839506173
+AVG FITNESS IN POPULATION : 0.91485185185185
+
+EPOCH : 23
+GENERATION : 51
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 4 2 6 | 5 9 1 | 3 8 7 |
+| 7 9 8 | 3 4 6 | 2 1 5 |
+| 3 5 1 | 7 2 8 | 9 6 4 |
+-------------------------
+| 2 4 7 | 8 5 3 | 1 4 6 |
+| 8 6 3 | 4 1 7 | 5 2 9 |
+| 9 1 5 | 2 6 9 | 7 3 8 |
+-------------------------
+| 5 8 9 | 1 3 4 | 6 7 2 |
+| 1 7 2 | 6 8 9 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 8 9 1 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 4
+AVG CONFLICTS IN POPULATION : 7.089
+FITNESS IN BEST INDIVIDUAL : 0.9506172839506173
+AVG FITNESS IN POPULATION : 0.9124814814814817
+
+EPOCH : 24
+GENERATION : 52
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 4 2 6 | 1 9 7 | 3 8 4 |
+| 7 9 8 | 3 4 6 | 2 1 5 |
+| 3 5 1 | 9 2 8 | 9 6 7 |
+-------------------------
+| 2 4 7 | 8 5 3 | 1 4 6 |
+| 8 6 3 | 7 1 4 | 5 2 9 |
+| 9 1 5 | 2 6 9 | 7 3 8 |
+-------------------------
+| 5 8 9 | 4 3 1 | 6 7 2 |
+| 1 7 2 | 6 8 9 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 8 9 1 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 6
+AVG CONFLICTS IN POPULATION : 8.56
+FITNESS IN BEST INDIVIDUAL : 0.9259259259259259
+AVG FITNESS IN POPULATION : 0.8943209876543348
+
+EPOCH : 25
+GENERATION : 51
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 4 2 6 | 1 9 5 | 3 8 7 |
+| 7 9 8 | 3 4 6 | 2 1 5 |
+| 3 5 1 | 7 2 8 | 9 6 4 |
+-------------------------
+| 2 4 7 | 8 5 3 | 1 4 6 |
+| 8 6 3 | 4 1 7 | 5 2 9 |
+| 9 1 5 | 2 6 9 | 7 3 8 |
+-------------------------
+| 5 8 9 | 1 3 4 | 6 7 2 |
+| 1 7 2 | 6 8 9 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 8 9 1 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 4
+AVG CONFLICTS IN POPULATION : 6.809
+FITNESS IN BEST INDIVIDUAL : 0.9506172839506173
+AVG FITNESS IN POPULATION : 0.9159382716049363
+
+EPOCH : 26
+GENERATION : 52
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 4 9 6 | 1 2 5 | 3 8 7 |
+| 8 2 7 | 3 4 6 | 1 9 5 |
+| 3 5 1 | 7 9 8 | 2 6 4 |
+-------------------------
+| 2 4 9 | 8 5 3 | 7 1 6 |
+| 8 6 3 | 4 1 7 | 5 2 9 |
+| 7 1 5 | 2 6 9 | 4 3 8 |
+-------------------------
+| 5 9 8 | 4 3 1 | 6 7 2 |
+| 1 7 2 | 6 8 9 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 8 9 1 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 6
+AVG CONFLICTS IN POPULATION : 8.807
+FITNESS IN BEST INDIVIDUAL : 0.9259259259259259
+AVG FITNESS IN POPULATION : 0.8912716049382841
+
+EPOCH : 27
+GENERATION : 53
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 4 2 6 | 7 9 5 | 3 8 1 |
+| 9 8 7 | 3 4 6 | 2 1 5 |
+| 3 5 1 | 9 2 8 | 4 6 7 |
+-------------------------
+| 2 4 9 | 8 5 3 | 7 1 6 |
+| 8 6 3 | 4 1 7 | 5 2 9 |
+| 7 1 5 | 2 6 9 | 8 3 4 |
+-------------------------
+| 5 9 8 | 1 3 4 | 6 7 2 |
+| 1 7 2 | 6 8 9 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 1 9 8 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 5
+AVG CONFLICTS IN POPULATION : 7.735
+FITNESS IN BEST INDIVIDUAL : 0.9382716049382716
+AVG FITNESS IN POPULATION : 0.9045061728395011
+
+EPOCH : 28
+GENERATION : 54
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 4 2 6 | 1 9 5 | 3 8 7 |
+| 9 8 7 | 3 4 6 | 2 1 5 |
+| 3 5 1 | 7 2 8 | 9 6 4 |
+-------------------------
+| 2 4 9 | 8 5 3 | 1 4 6 |
+| 8 6 3 | 4 1 7 | 5 2 9 |
+| 7 1 5 | 2 6 9 | 7 3 8 |
+-------------------------
+| 5 9 8 | 4 3 1 | 6 7 2 |
+| 1 7 2 | 6 8 9 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 8 9 1 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 4
+AVG CONFLICTS IN POPULATION : 6.931
+FITNESS IN BEST INDIVIDUAL : 0.9506172839506173
+AVG FITNESS IN POPULATION : 0.9144320987654319
+
+EPOCH : 29
+GENERATION : 57
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 4 2 6 | 1 9 5 | 3 8 7 |
+| 7 9 8 | 3 4 6 | 2 1 5 |
+| 3 5 1 | 9 2 8 | 9 6 4 |
+-------------------------
+| 2 4 7 | 8 5 3 | 7 1 6 |
+| 8 6 3 | 7 1 4 | 5 2 9 |
+| 9 1 5 | 2 6 7 | 8 3 4 |
+-------------------------
+| 5 8 9 | 4 3 1 | 6 7 2 |
+| 1 7 2 | 6 8 9 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 1 9 8 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 6
+AVG CONFLICTS IN POPULATION : 8.842
+FITNESS IN BEST INDIVIDUAL : 0.9259259259259259
+AVG FITNESS IN POPULATION : 0.890839506172852
+
+EPOCH : 30
+GENERATION : 52
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 4 2 6 | 1 9 5 | 3 8 7 |
+| 9 8 7 | 3 4 6 | 2 1 5 |
+| 3 5 1 | 7 2 8 | 9 6 4 |
+-------------------------
+| 2 4 9 | 8 5 3 | 7 1 6 |
+| 8 6 3 | 4 1 7 | 5 2 9 |
+| 7 1 5 | 2 6 9 | 8 3 4 |
+-------------------------
+| 5 9 8 | 4 3 1 | 6 7 2 |
+| 1 7 2 | 6 8 9 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 1 9 8 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 4
+AVG CONFLICTS IN POPULATION : 6.79
+FITNESS IN BEST INDIVIDUAL : 0.9506172839506173
+AVG FITNESS IN POPULATION : 0.9161728395061706
+
+EPOCH : 31
+GENERATION : 63
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 4 2 6 | 7 9 5 | 3 8 1 |
+| 7 9 8 | 3 4 6 | 2 9 5 |
+| 3 5 1 | 9 2 8 | 7 6 4 |
+-------------------------
+| 2 4 7 | 8 5 3 | 1 4 6 |
+| 8 6 3 | 4 1 7 | 5 2 9 |
+| 9 1 5 | 2 6 9 | 8 3 7 |
+-------------------------
+| 5 8 9 | 1 3 4 | 6 7 2 |
+| 1 7 2 | 6 8 9 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 9 1 8 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 5
+AVG CONFLICTS IN POPULATION : 7.761
+FITNESS IN BEST INDIVIDUAL : 0.9382716049382716
+AVG FITNESS IN POPULATION : 0.9041851851851777
+
+EPOCH : 32
+GENERATION : 52
+CURRENT BEST INDIVIDUAL : 
+-------------------------
+| 4 2 6 | 7 1 5 | 3 8 7 |
+| 9 8 7 | 3 4 6 | 1 9 5 |
+| 3 5 1 | 9 2 8 | 2 6 4 |
+-------------------------
+| 2 4 9 | 8 5 3 | 7 1 6 |
+| 8 6 3 | 4 1 7 | 5 2 9 |
+| 7 1 5 | 2 6 9 | 4 3 8 |
+-------------------------
+| 5 9 8 | 1 3 4 | 6 7 2 |
+| 1 7 2 | 6 8 9 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 8 9 1 |
+-------------------------
+
+CONFLICTS IN BEST INDIVIDUAL : 7
+AVG CONFLICTS IN POPULATION : 9.471
+FITNESS IN BEST INDIVIDUAL : 0.9135802469135802
+AVG FITNESS IN POPULATION : 0.8830740740740811
+
+SOLUTION TO PROBLEM : 
+-------------------------
+| 9 4 6 | 1 2 5 | 3 8 7 |
+| 7 2 8 | 3 4 6 | 9 1 5 |
+| 3 5 1 | 9 8 7 | 2 6 4 |
+-------------------------
+| 2 9 7 | 8 5 3 | 1 4 6 |
+| 8 6 3 | 7 1 4 | 5 2 9 |
+| 4 1 5 | 2 6 9 | 7 3 8 |
+-------------------------
+| 5 8 9 | 4 3 1 | 6 7 2 |
+| 1 7 2 | 6 9 8 | 4 5 3 |
+| 6 3 4 | 5 7 2 | 8 9 1 |
+-------------------------
+
+CONFLICTS : 0
+
+Process finished with exit code 0
